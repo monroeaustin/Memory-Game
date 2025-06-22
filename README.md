@@ -2,12 +2,13 @@
 
 A fast-paced memory card game built with React — powered by the Rick and Morty API, styled with custom UI, and leveled up with interactive audio, loading animations, and modern UX.
 
-![screenshot](./screenshot.png) <!-- Replace with your actual image path if needed -->
+!![image](https://github.com/user-attachments/assets/8190b902-7bb9-4ca7-8e24-1c3bec596f54)
+
 
 ---
 
 ## 🚀 Live Demo
-> 🔗 [Play the Game Now](https://your-deployment-link.com)
+> 🔗 [Play the Game Now]((https://memory-game-plum-two.vercel.app/))
 
 ---
 
