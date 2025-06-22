@@ -1,12 +1,67 @@
-# React + Vite
+# 🧠 Rick and Morty Memory Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fast-paced memory card game built with React — powered by the Rick and Morty API, styled with custom UI, and leveled up with interactive audio, loading animations, and modern UX.
 
-Currently, two official plugins are available:
+![screenshot](./screenshot.png) <!-- Replace with your actual image path if needed -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Live Demo
+> 🔗 [Play the Game Now](https://your-deployment-link.com)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📌 Features
+
+- 🔁 **Memory Logic** — Click unique cards to build your score. Click the same one twice? Score resets.
+- 🎯 **Score Tracking** — Live score + high score that persists until refresh.
+- 🎨 **Custom UI** — Styled from scratch with a space-tech aesthetic and blur effects.
+- ⏳ **Loading Animation** — Fully animated progress bar while characters load from the API.
+- 🧠 **Tutorial Modal** — Click the info icon to learn the rules.
+- 🔊 **Sound Effects** — Clicks, errors, and background music inspired by Rick & Morty.
+- 📱 **Responsive Design** — Looks clean across desktops and mobile.
+
+---
+
+## 🧰 Tech Stack
+
+| Frontend   | API             | Styling     | Media        |
+|------------|------------------|-------------|--------------|
+| React.js   | Rick & Morty API | CSS3        | Custom SFX / BGM |
+| Vite       | REST             | Flexbox / Grid | React Icons |
+
+---
+
+## 🗂️ Folder Structure (Simplified)
+
+├── public/
+│ ├── rick-morty-song.mp3
+│ └── sfx/
+├── src/
+│ ├── components/
+│ │ ├── Game.jsx
+│ │ ├── Header.jsx
+│ │ ├── CardSection.jsx
+│ │ ├── Scoreboard.jsx
+│ │ └── Tutorial.jsx
+│ ├── App.jsx
+│ ├── index.css
+│ └── main.jsx
+
+
+💡 Inspiration
+This game was built as part of The Odin Project React curriculum and enhanced with personal creative flair.
+
+🧪 Future Improvements
+🎮 Keyboard accessibility
+
+💾 Score persistence via localStorage
+
+🧩 Difficulty levels or time mode
+
+🌐 Multilingual support
+
+📜 License
+This project is open source and free to use under the MIT License.
+
+🤘 Made with love, pixels, and a little chaos from the multiverse 🌀

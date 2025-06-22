@@ -10,7 +10,7 @@ function App() {
         <footer>
   <p>
     Built with ❤️ by Ramon Austin | 
-    <a href="https://github.com/YOUR_GITHUB_REPO" target="_blank" rel="noreferrer">GitHub</a>
+    <a href="https://github.com/monroeaustin/Memory-Game" target="_blank" rel="noreferrer">GitHub</a>
   </p>
 </footer>
     </>
