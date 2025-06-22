@@ -1,5 +1,4 @@
 import Header from './components/Header.jsx'
-import Scoreboard from './components/Scoreboard.jsx'
 import Game from './Game.jsx'
 function App() {
 
