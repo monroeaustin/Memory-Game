@@ -1,68 +1,292 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  font-family: 'Roboto', sans-serif;
+  background:
+    radial-gradient(rgba(0, 0, 0, 0.85), rgba(11, 12, 16, 0.95)),
+    url('/rick-morty-bg.jpg') no-repeat center top;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #ffffff;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Header */
+nav {
+  background-color: #1f2833;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #66fcf1;
+}
+
+nav h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  color: #66fcf1;
+  margin: auto;
+  text-align: center;
+  flex-grow: 1;
+}
+
+nav img.img {
+  height: 60px;
+  margin: 0 1rem;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: #66fcf1;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Scoreboard */
+.score {
+  text-align: center;
+  margin: 2rem auto 1rem;
+  font-size: 1.2rem;
+  color: #c5c6c7;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+/* Card Styling */
+.card {
+  background-color: #3a3f44;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.3s ease;
+  cursor: pointer;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  border-color: #66fcf1;
+}
+
+.card.clicked {
+  box-shadow: 0 0 10px 4px #66fcf1;
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-bottom: 1px solid #45a29e;
+}
+
+.card p {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  color: #f5f5f5;
+  text-align: center;
+  background-color: #1f2833;
+  width: 100%;
+  min-height: 48px; /* 🔧 Set a fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  all: unset;
+  width: 100%;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Tutorial Modal */
+.tut-container {
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.tut-container .card {
+  background: #1f2833;
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 15px #66fcf1;
+  position: relative;
+}
+
+.tut-container h2 {
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.tut-container ul {
+  text-align: left;
+  padding-left: 1.2rem;
+}
+
+.tut-container p, .tut-container li {
+  font-size: 1rem;
+  color: #c5c6c7;
+}
+
+.exit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.exit button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #66fcf1;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+  color: #66fcf1;
+  background-color: #1f2833;
+  margin-top: auto;
+}
+
+footer a {
+  color: #66fcf1;
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  nav h1 {
+    font-size: 1.5rem;
   }
-  a:hover {
-    color: #747bff;
+
+  .grid {
+    padding: 1rem;
+    gap: 15px;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .card {
+    width: 130px;
   }
+
+  .card p {
+    font-size: 0.8rem;
+  }
+}
+div#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.win-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-card {
+  background-color: #1f2833;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #66fcf1;
+  text-align: center;
+}
+
+.modal-card h2 {
+  font-size: 2rem;
+  color: #66fcf1;
+}
+
+.modal-card button {
+  margin-top: 1rem;
+  padding: 0.7rem 0.4rem;
+  font-size: 1rem;
+  background-color: #66fcf1;
+  border: none;
+  border-radius: 8px;
+  color: #0b0c10;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.modal-card button:hover {
+  background-color: #45a29e;
+}
+
+.loader-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  color: #66fcf1;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.loader-bar {
+  width: 60%;
+  height: 12px;
+  background: #1f2833;
+  border: 1px solid #66fcf1;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.loader-bar .progress {
+  height: 100%;
+  background: linear-gradient(90deg, #66fcf1, #45a29e);
+  width: 0%;
+  transition: width 0.3s ease;
 }
