@@ -7,7 +7,7 @@ A fast-paced memory card game built with React — powered by the Rick and Morty
 ---
 
 ## 🚀 Live Demo
-> 🔗 [Play the Game Now](https://your-deployment-link.com)
+> 🔗 [Play the Game Now]((https://memory-game-plum-two.vercel.app/))
 
 ---
 
